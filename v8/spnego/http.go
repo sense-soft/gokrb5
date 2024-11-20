@@ -268,6 +268,7 @@ func SPNEGOKRB5Authenticate(inner http.Handler, kt *keytab.Keytab, settings ...f
 			return
 		}
 
+		// get st
 		st, err := getAuthorizationNegotiationHeaderAsSPNEGOToken(spnego, r, w)
 		if st == nil || err != nil {
 			// response to client and logging handled in function above so just return
